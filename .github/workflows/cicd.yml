@@ -1,0 +1,25 @@
+name: CI CD static deployment
+
+on:
+    push:
+      branches:
+        - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy Via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script:  |
+            cd /var/www/html/stop-watch-app
+            sudo git pull origin
+            echo  "DONE"
+
+
+
+
+      
