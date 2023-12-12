@@ -11,9 +11,9 @@ jobs:
       - name: deploy Via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           script:  |
             cd /var/www/html/stop-watch-app
             sudo git pull origin
