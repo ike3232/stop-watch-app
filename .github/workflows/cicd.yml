@@ -17,6 +17,7 @@ jobs:
           script:  |
             cd stop-watch-app
             git pull origin main
+            cd
             sudo cp -r stop-watch-app/* /var/www/html
             
             
