@@ -15,9 +15,9 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script:  |
-            cd /var/www/html/stop-watch-app
-            sudo git pull origin
-            echo  "DONE"
+            cd /var/www/stop-watch-app/*
+            git pull origin
+            git status
 
 
 
