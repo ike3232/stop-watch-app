@@ -1,4 +1,4 @@
-name: CI CD static deployment
+name: CI CD static deployment-app
 
 on:
     push:
